@@ -59,8 +59,6 @@
               <li class="sidebar-item"><a class="sidebar-link" href="../../index.html"> 
                       <span><i class="fa-solid fa-house"></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Início </span></a></li>
               <li class="sidebar-item"><a class="sidebar-link" href="tables.html"> 
-                      <span><i class="fa-solid fa-user"></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Usuários </span></a></li>
-              <li class="sidebar-item"><a class="sidebar-link" href="tables.html"> 
                       <span><i class="fa-solid fa-briefcase"></i>&nbsp;&nbsp;&nbsp;&nbsp;Funcionários </span></a></li>
               <li class="sidebar-item active"><a class="sidebar-link" href="tabela.html"> 
                       <span><i class="fa-solid fa-person fa-xl"></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Clientes</span></a></li>
