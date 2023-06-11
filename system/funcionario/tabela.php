@@ -58,9 +58,9 @@
         <ul class="list-unstyled">
               <li class="sidebar-item"><a class="sidebar-link" href="../../index.html"> 
                       <span><i class="fa-solid fa-house"></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Início </span></a></li>
-              <li class="sidebar-item"><a class="sidebar-link" href="../funcionario/tabela.php"> 
-                      <span><i class="fa-solid fa-briefcase"></i>&nbsp;&nbsp;&nbsp;&nbsp;Funcionários </span></a></li>
               <li class="sidebar-item active"><a class="sidebar-link" href="#"> 
+                      <span><i class="fa-solid fa-briefcase"></i>&nbsp;&nbsp;&nbsp;&nbsp;Funcionários </span></a></li>
+              <li class="sidebar-item"><a class="sidebar-link" href="../cliente/tabela.php"> 
                       <span><i class="fa-solid fa-person fa-xl"></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Clientes</span></a></li>
 
               <li class="sidebar-item"><a class="sidebar-link" href="charts.html"> 
@@ -76,7 +76,7 @@
             <!-- Page Header-->
             <div class="bg-dash-dark-2 py-4">
               <div class="container-fluid">
-                <h2 class="h5 mb-0">Clientes</h2>
+                <h2 class="h5 mb-0">Funcionários</h2>
               </div>
             </div>
             <div class="section">
@@ -107,9 +107,7 @@
                             <tr>
                               <th>ID</th>
                               <th>Nome</th>
-                              <th>Data de Nascimento</th>
-                              <th>Telefone</th>
-                              <th>Endereço</th>
+                              <th>E-Mail</th>
                               <th>CPF</th>
                               <th>Opções</th>
                             </tr>
@@ -241,22 +239,19 @@
           if(letra == 'A') {
             // Invocar modal
             $('#Alterar').on('shown.bs.modal', function() {
-              $.post('modal.php', {cliente_id: id}, function(resposta) {
+              $.post('modal.php', {funcionario_id: id}, function(resposta) {
                 $('#corpoModalEdita').html(resposta)
               })
             })
             $('#Alterar').modal('show')
-              $('#cliente_cpf').inputmask('999.999.999-99');
-              $('#cliente_telefone').inputmask('(99) 99999-9999');
+              $('#funcionario_cpf').inputmask('999.999.999-99');;
             $('#gravaAlteracao').click(function() {
-              let id = $('#cliente_id').val()
-              let nome = $('#cliente_nome').val()
-              let nascimento = $('#cliente_nascimento').val()
-              let telefone = $('#cliente_telefone').val()
-              let endereco = $('#cliente_endereco').val()
-              let cpf = $('#cliente_cpf').val()
+              let id = $('#funcionario_id').val()
+              let nome = $('#funcionario_nome').val()
+              let email = $('#funcionario_email').val()
+              let cpf = $('#funcionario_cpf').val()
 
-              $.post('update.php', {cliente_id:id, cliente_nome:nome, cliente_nascimento:nascimento, cliente_telefone:telefone, cliente_endereco:endereco, cliente_cpf: cpf}, function(resposta){
+              $.post('update.php', {funcionario_id:id, funcionario_nome:nome, funcionario_email:email, funcionario_cpf: cpf}, function(resposta){
                 if(resposta == '1') {
                   swal('Alteração feita com sucesso!')
                 } else {
@@ -275,7 +270,7 @@
               dangerMode: true,
             }).then((willDelete) => {
               if (willDelete){
-                $.post('excluir.php', {codcli: id}, function(resposta) {
+                $.post('excluir.php', {funcionario_id: id}, function(resposta) {
                   if (resposta == '1') {
                     swal('Registro excluído com sucesso!', {icon: info})
                     $('#btnbuscar').click();

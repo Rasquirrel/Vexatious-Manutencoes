@@ -58,9 +58,9 @@
         <ul class="list-unstyled">
               <li class="sidebar-item"><a class="sidebar-link" href="../../index.html"> 
                       <span><i class="fa-solid fa-house"></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Início </span></a></li>
-              <li class="sidebar-item"><a class="sidebar-link" href="../funcionario/tabela.php"> 
+              <li class="sidebar-item active"><a class="sidebar-link" href="tabela.php"> 
                       <span><i class="fa-solid fa-briefcase"></i>&nbsp;&nbsp;&nbsp;&nbsp;Funcionários </span></a></li>
-              <li class="sidebar-item active"><a class="sidebar-link" href="#"> 
+              <li class="sidebar-item"><a class="sidebar-link" href="../cliente/tabela.php"> 
                       <span><i class="fa-solid fa-person fa-xl"></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Clientes</span></a></li>
 
               <li class="sidebar-item"><a class="sidebar-link" href="charts.html"> 
@@ -76,52 +76,54 @@
             <!-- Page Header-->
             <div class="bg-dash-dark-2 py-4">
               <div class="container-fluid">
-                <h2 class="h5 mb-0">Clientes</h2>
+                <h2 class="h5 mb-0">Funcionários</h2>
               </div>
             </div>
             <div class="section">
               <div class="container-fluid">
 
                 <div class="row">
-                  <div class="col-12">
-                    <div class="card my-4 py-4">
+                  <div class="col-lg-12">
+                    <div class="card py-4 my-4">
                       <div class="card-header">
-        
-                        <form id="formbusca" action="javascript:" method="POST" class="card-tools" >
-                          <div class="input-group input-group-sm col-12">
-                            <input type="text" id="texto" class="form-control float-right" placeholder="Buscar">
-        
-                            <div class="input-group-append">
-                              <button type="submit" class="btn btn-default" id="btnbuscar">
-                                <i class="fas fa-search"></i>&nbsp;&nbsp;
-                              </button>
-                              <a class="btn btn-default" href="formadicionar.php"><i class="fa-solid fa-plus"></i></a>
+                        <h3 class="h4 mb-0">Cadastro de funcionários</h3>
+                      </div>
+                      <div class="card-body pt-0">
+                        <form class="form-horizontal" action="javascript:" method="POST">
+                          <div class="row">
+                            <label class="col-sm-3 form-label">Nome</label>
+                            <div class="col-sm-9">
+                              <input class="form-control" type="text" required id="nome">
+                            </div>
+                          </div>
+                          
+                          <div class="my-4"></div>
+                          <div class="row">
+                            <label class="col-sm-3 form-label">E-Mail</label>
+                            <div class="col-sm-9">
+                              <input class="form-control" type="email" required id="email">
+                            </div>
+                          </div>
+
+
+                          <div class="my-4"></div>
+                          <div class="row">
+                            <label class="col-sm-3 form-label">CPF</label>
+                            <div class="col-sm-9">
+                              <input class="form-control" type="text" required id="cpf">
+                            </div>
+                          </div>
+
+                          <div class="my-4"></div>
+                          <div class="row">
+                            <div class="col-sm-9 ms-auto">
+                              <button class="btn btn-secondary" type="reset">Cancelar</button>
+                              <button class="btn btn-primary" type="submit" id="btnadicionar">Adicionar</button>
                             </div>
                           </div>
                         </form>
                       </div>
-                      <!-- /.card-header -->
-                      <div class="card-body table-responsive p-0">
-                        <table class="table table-hover text-nowrap">
-                          <thead>
-                            <tr>
-                              <th>ID</th>
-                              <th>Nome</th>
-                              <th>Data de Nascimento</th>
-                              <th>Telefone</th>
-                              <th>Endereço</th>
-                              <th>CPF</th>
-                              <th>Opções</th>
-                            </tr>
-                          </thead>
-                          <tbody id="corpo_tabela">
-                            
-                          </tbody>
-                        </table>
-                      </div>
-                      <!-- /.card-body -->
                     </div>
-                    <!-- /.card -->
                   </div>
                 </div>
               </div>
@@ -173,51 +175,13 @@
     </script>
     <!-- FontAwesome CSS - loading as last, so it doesn't block rendering-->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-
-
-
-
-    <!--MODAIS-->
-    <div class="modal" id="Alterar" tabindex="-1" role="dialog">
-      <div class="modal-dialog modal-lg" role="document">
-        <div class="modal-content">
-          <!--CABEÇALHO MODAL-->
-          <div class="modal-header bg-default">
-            <h5 class="modal-title">Alteração do cadastro</h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-          <!--CORPO MODAL-->
-          <div class="modal-body">
-              
-              <div class="card" id="corpoModalEdita">
-                
-              </div>
-          </div>
-         
-         <!--RODAPE MODAL-->
-             <div class="modal-footer ">
-            <button type="button"  class="btn btn-secondary" data-dismiss="modal">Fechar</button>
-            <button type="button" id="gravaAlteracao" class="btn btn-primary">Gravar Alterações</button>
-          </div>
-        </div>
-      </div>
-    </div>
-
-
-    <!-- CODIGO JQUERY USADO PELO ISAC-->
     <script src="../../js/jquery3.js"></script>
-    <!--input mask -->
     <script src="../../js/inputmask.js"></script>
-    <script src="../../js/jquery.inputmask.js"></script>
+    
     <script src="../../js/jquery.inputmask.min.js"></script>
-    <!-- Codigo do SweetAlert-->
-    <script src="../../js/sweetalert.js"></script>
+
     <script>
       $(document).ready(function(){
-        
-
         // Começo da função de pesquisar
         $('#btnbuscar').click(function(){
           let texto = $('#texto').val()
@@ -226,67 +190,37 @@
               $('#corpo_tabela').html(resposta);
             }
             else {
-              swal('Nao tem nada para mostrar!', {icon: error})
+              alert('Nao tem nada para mostrar!')
             }
           })
         })
+      })
+    </script>
+    <script src="../../js/jquery3.js"></script>
+    <script src="../../js/sweetalert.js"></script>
+    <script src="../../js/jquery.inputmask.js"></script>
+    <script>
 
-        // Começo da função de alterar e excluir
-        $('#corpo_tabela').on('click', 'a', function() {
-          var vetor = $(this).attr("id")
-          var elemento = vetor.split("|")
-          let id = elemento[0]
-          let letra = elemento[1]
+      $(document).ready(function() {
 
-          if(letra == 'A') {
-            // Invocar modal
-            $('#Alterar').on('shown.bs.modal', function() {
-              $.post('modal.php', {cliente_id: id}, function(resposta) {
-                $('#corpoModalEdita').html(resposta)
-              })
-            })
-            $('#Alterar').modal('show')
-              $('#cliente_cpf').inputmask('999.999.999-99');
-              $('#cliente_telefone').inputmask('(99) 99999-9999');
-            $('#gravaAlteracao').click(function() {
-              let id = $('#cliente_id').val()
-              let nome = $('#cliente_nome').val()
-              let nascimento = $('#cliente_nascimento').val()
-              let telefone = $('#cliente_telefone').val()
-              let endereco = $('#cliente_endereco').val()
-              let cpf = $('#cliente_cpf').val()
+        $('#cpf').inputmask('999.999.999-99');
 
-              $.post('update.php', {cliente_id:id, cliente_nome:nome, cliente_nascimento:nascimento, cliente_telefone:telefone, cliente_endereco:endereco, cliente_cpf: cpf}, function(resposta){
-                if(resposta == '1') {
-                  swal('Alteração feita com sucesso!')
-                } else {
-                  swal('Algo deu errado.')
-                }
-              })
-            })
-          }
 
-          if(letra == 'E') {
-            swal({
-              title: 'Excluir',
-              text: 'Deseja realmente excluir esse registro?',
-              icon: 'info',
-              buttons: ['Não', 'Sim'],
-              dangerMode: true,
-            }).then((willDelete) => {
-              if (willDelete){
-                $.post('excluir.php', {codcli: id}, function(resposta) {
-                  if (resposta == '1') {
-                    swal('Registro excluído com sucesso!', {icon: info})
-                    $('#btnbuscar').click();
-                  } else {
-                    swal('Algo deu errado!')
-                  }
-                })
-              }
-            })
-          }
+        $('#btnadicionar').click(function(){
+          let nome = $('#nome').val()
+          let email = $('#email').val()
+          let cpf = $('#cpf').val()
+
+          $.post('salvar.php', {funcionario_nome: nome, funcionario_email: email, funcionario_cpf: cpf}, function(resposta) {
+            if (resposta == '1') {
+              swal('Cadastro feito com sucesso!')
+            } else {
+              swal('Algo deu errado!')
+            }
+
+          })
         })
+
       })
     </script>
   </body>
