@@ -208,10 +208,15 @@
 
     <!-- CODIGO JQUERY USADO PELO ISAC-->
     <script src="../../js/jquery3.js"></script>
+    <!--input mask -->
+    <script src="../../js/inputmask.js"></script>
+    <script src="../../js/jquery.inputmask.js"></script>
+    <script src="../../js/jquery.inputmask.min.js"></script>
     <!-- Codigo do SweetAlert-->
     <script src="../../js/sweetalert.js"></script>
     <script>
       $(document).ready(function(){
+        
 
         // Começo da função de pesquisar
         $('#btnbuscar').click(function(){
@@ -241,6 +246,8 @@
               })
             })
             $('#Alterar').modal('show')
+              $('#cliente_cpf').inputmask('999.999.999-99');
+              $('#cliente_telefone').inputmask('(99) 99999-9999');
             $('#gravaAlteracao').click(function() {
               let id = $('#cliente_id').val()
               let nome = $('#cliente_nome').val()
