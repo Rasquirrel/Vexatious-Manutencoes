@@ -97,7 +97,7 @@
                               <button type="submit" class="btn btn-default" id="btnbuscar">
                                 <i class="fas fa-search"></i>&nbsp;&nbsp;
                               </button>
-                              <a class="btn btn-default" href="formadicionar.html"><i class="fa-solid fa-plus"></i></a>
+                              <a class="btn btn-default" href="formadicionar.php"><i class="fa-solid fa-plus"></i></a>
                             </div>
                           </div>
                         </form>
