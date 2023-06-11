@@ -3,7 +3,7 @@
   <head> 
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Dark Admin by Bootstrapious.com</title>
+    <title>Vexatious Manutenções</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="robots" content="all,follow">
@@ -63,7 +63,7 @@
               <li class="sidebar-item"><a class="sidebar-link" href="../cliente/tabela.php"> 
                       <span><i class="fa-solid fa-person fa-xl"></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Clientes</span></a></li>
 
-              <li class="sidebar-item"><a class="sidebar-link" href="charts.html"> 
+              <li class="sidebar-item"><a class="sidebar-link" href="../computador/tabela.php"> 
                       <span><i class="fa-solid fa-computer"></i>&nbsp;&nbsp;&nbsp;&nbsp;Computadores </span></a></li>
               <li class="sidebar-item"><a class="sidebar-link" href="forms.html"> 
                       <span><i class="fa-solid fa-comment"></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Pedidos </span></a></li>

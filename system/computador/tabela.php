@@ -60,10 +60,10 @@
                       <span><i class="fa-solid fa-house"></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Início </span></a></li>
               <li class="sidebar-item"><a class="sidebar-link" href="../funcionario/tabela.php"> 
                       <span><i class="fa-solid fa-briefcase"></i>&nbsp;&nbsp;&nbsp;&nbsp;Funcionários </span></a></li>
-              <li class="sidebar-item active"><a class="sidebar-link" href="#"> 
+              <li class="sidebar-item"><a class="sidebar-link" href="../cliente/tabela.php"> 
                       <span><i class="fa-solid fa-person fa-xl"></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Clientes</span></a></li>
 
-              <li class="sidebar-item"><a class="sidebar-link" href="charts.html"> 
+              <li class="sidebar-item active"><a class="sidebar-link" href="#"> 
                       <span><i class="fa-solid fa-computer"></i>&nbsp;&nbsp;&nbsp;&nbsp;Computadores </span></a></li>
               <li class="sidebar-item"><a class="sidebar-link" href="forms.html"> 
                       <span><i class="fa-solid fa-comment"></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Pedidos </span></a></li>
@@ -76,7 +76,7 @@
             <!-- Page Header-->
             <div class="bg-dash-dark-2 py-4">
               <div class="container-fluid">
-                <h2 class="h5 mb-0">Clientes</h2>
+                <h2 class="h5 mb-0">Computadores</h2>
               </div>
             </div>
             <div class="section">
@@ -107,10 +107,8 @@
                             <tr>
                               <th>ID</th>
                               <th>Nome</th>
-                              <th>Data de Nascimento</th>
-                              <th>Telefone</th>
-                              <th>Endereço</th>
-                              <th>CPF</th>
+                              <th>Cliente</th>
+                              <th>Problema</th>
                               <th>Opções</th>
                             </tr>
                           </thead>
@@ -183,7 +181,7 @@
         <div class="modal-content">
           <!--CABEÇALHO MODAL-->
           <div class="modal-header bg-default">
-            <h5 class="modal-title">Alteração do cadastro</h5>
+            <h5 class="modal-title">Alteração</h5>
             <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
               <span aria-hidden="true">&times;</span>
             </button>
@@ -199,7 +197,7 @@
          <!--RODAPE MODAL-->
              <div class="modal-footer ">
             <button type="button"  class="btn btn-secondary" data-dismiss="modal">Fechar</button>
-            <button type="button" id="gravaAlteracao" class="btn btn-primary">Gravar Alterações</button>
+            <button type="submit" id="gravaAlteracao" class="btn btn-primary">Gravar Alterações</button>
           </div>
         </div>
       </div>
@@ -241,22 +239,19 @@
           if(letra == 'A') {
             // Invocar modal
             $('#Alterar').on('shown.bs.modal', function() {
-              $.post('modal.php', {cliente_id: id}, function(resposta) {
+              $.post('modal.php', {computador_id: id}, function(resposta) {
                 $('#corpoModalEdita').html(resposta)
               })
             })
             $('#Alterar').modal('show')
-              $('#cliente_cpf').inputmask('999.999.999-99');
-              $('#cliente_telefone').inputmask('(99) 99999-9999');
-            $('#gravaAlteracao').click(function() {
-              let id = $('#cliente_id').val()
-              let nome = $('#cliente_nome').val()
-              let nascimento = $('#cliente_nascimento').val()
-              let telefone = $('#cliente_telefone').val()
-              let endereco = $('#cliente_endereco').val()
-              let cpf = $('#cliente_cpf').val()
 
-              $.post('update.php', {cliente_id:id, cliente_nome:nome, cliente_nascimento:nascimento, cliente_telefone:telefone, cliente_endereco:endereco, cliente_cpf: cpf}, function(resposta){
+            $('#gravaAlteracao').click(function() {
+              let id = $('#computador_id').val()
+              let cli_id = $('#cliente_id').val()
+              let comput_nome = $('#computador_nome')
+              let problema = $('#computador_problema').val()
+
+              $.post('update.php', {computador_id:id, cliente_id:cli_id, computador_problema: problema, computador_nome: comput_nome}, function(resposta){
                 if(resposta == '1') {
                   swal('Alteração feita com sucesso!')
                 } else {
@@ -275,7 +270,7 @@
               dangerMode: true,
             }).then((willDelete) => {
               if (willDelete){
-                $.post('excluir.php', {codcli: id}, function(resposta) {
+                $.post('excluir.php', {computador_id: id}, function(resposta) {
                   if (resposta == '1') {
                     swal('Registro excluído com sucesso!', {icon: info})
                     $('#btnbuscar').click();
