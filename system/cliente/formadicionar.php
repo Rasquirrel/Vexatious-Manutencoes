@@ -60,7 +60,7 @@
                       <span><i class="fa-solid fa-house"></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Início </span></a></li>
               <li class="sidebar-item"><a class="sidebar-link" href="tables.html"> 
                       <span><i class="fa-solid fa-briefcase"></i>&nbsp;&nbsp;&nbsp;&nbsp;Funcionários </span></a></li>
-              <li class="sidebar-item active"><a class="sidebar-link" href="tabela.html"> 
+              <li class="sidebar-item active"><a class="sidebar-link" href="tabela.php"> 
                       <span><i class="fa-solid fa-person fa-xl"></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Clientes</span></a></li>
 
               <li class="sidebar-item"><a class="sidebar-link" href="charts.html"> 
@@ -118,6 +118,14 @@
                             <label class="col-sm-3 form-label">Endereço</label>
                             <div class="col-sm-9">
                               <input class="form-control" type="text" required id="endereco">
+                            </div>
+                          </div>
+
+                          <div class="my-4"></div>
+                          <div class="row">
+                            <label class="col-sm-3 form-label">CPF</label>
+                            <div class="col-sm-9">
+                              <input class="form-control" type="text" required id="cpf">
                             </div>
                           </div>
 
@@ -208,8 +216,9 @@
           let nascimento = $('#nascimento').val()
           let telefone = $('#telefone').val()
           let endereco = $('#endereco').val()
+          let cpf = $('#cpf').val()
 
-          $.post('salvar.php', {cliente_nome: nome, cliente_nascimento: nascimento, cliente_telefone: telefone, cliente_endereco: endereco}, function(resposta) {
+          $.post('salvar.php', {cliente_nome: nome, cliente_nascimento: nascimento, cliente_telefone: telefone, cliente_endereco: endereco, cliente_cpf: cpf}, function(resposta) {
             if (resposta == '1') {
               swal('Cadastro feito com sucesso!')
             } else {

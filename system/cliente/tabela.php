@@ -110,6 +110,7 @@
                               <th>Data de Nascimento</th>
                               <th>Telefone</th>
                               <th>Endereço</th>
+                              <th>CPF</th>
                               <th>Opções</th>
                             </tr>
                           </thead>
@@ -246,8 +247,9 @@
               let nascimento = $('#cliente_nascimento').val()
               let telefone = $('#cliente_telefone').val()
               let endereco = $('#cliente_endereco').val()
+              let cpf = $('#cliente_cpf').val()
 
-              $.post('update.php', {cliente_id:id, cliente_nome:nome, cliente_nascimento:nascimento, cliente_telefone:telefone, cliente_endereco:endereco}, function(resposta){
+              $.post('update.php', {cliente_id:id, cliente_nome:nome, cliente_nascimento:nascimento, cliente_telefone:telefone, cliente_endereco:endereco, cliente_cpf: cpf}, function(resposta){
                 if(resposta == '1') {
                   swal('Alteração feita com sucesso!')
                 } else {

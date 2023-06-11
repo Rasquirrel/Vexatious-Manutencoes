@@ -49,6 +49,14 @@
                      </div>
                   </div>
 
+                  <div class="my-4"></div>
+                  <div class="row">
+                     <label class="col-sm-3 form-label">CPF</label>
+                     <div class="col-sm-9">
+                     <input class="form-control" type="text" required id="cliente_cpf" value="'.$row['cliente_cpf'].'">
+                     </div>
+                  </div>
+
                </form>
                </div>
             ';			

@@ -5,8 +5,9 @@ $cliente_nome = $_POST['cliente_nome'];
 $cliente_nascimento = $_POST['cliente_nascimento'];
 $cliente_telefone = $_POST['cliente_telefone'];
 $cliente_endereco = $_POST['cliente_endereco'];
+$cliente_cpf = $_POST['cliente_cpf'];
 
-$sql = "update tb_clientes set cliente_nome = '$cliente_nome', cliente_nascimento = '$cliente_nascimento', cliente_telefone = '$cliente_telefone', cliente_endereco = '$cliente_endereco' where cliente_id = '$cliente_id'";
+$sql = "update tb_clientes set cliente_nome = '$cliente_nome', cliente_nascimento = '$cliente_nascimento', cliente_telefone = '$cliente_telefone', cliente_endereco = '$cliente_endereco', cliente_cpf = '$cliente_cpf' where cliente_id = '$cliente_id'";
 
 $update = $conexao->query($sql);
 

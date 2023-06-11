@@ -14,6 +14,7 @@
 				  <td class="left">'.$row['cliente_nascimento'].'</td>
 				  <td class="left">'.$row['cliente_telefone'].'</td>
 				  <td class="left">'.$row['cliente_endereco'].'</td>
+				  <td class="left">'.$row['cliente_cpf'].'</td>
 				  <td class="left">
 				   <a href="#" id="'.$row['cliente_id'].'|A" title="Alterar" class="btn btn-tbl-edit btn-danger">
 					  <i class="fa fa-pencil"></i>
