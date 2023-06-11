@@ -191,6 +191,10 @@
     <!-- FontAwesome CSS - loading as last, so it doesn't block rendering-->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
     <script src="../../js/jquery3.js"></script>
+    <script src="../../js/inputmask.js"></script>
+    
+    <script src="../../js/jquery.inputmask.min.js"></script>
+
     <script>
       $(document).ready(function(){
         // Começo da função de pesquisar
@@ -209,8 +213,15 @@
     </script>
     <script src="../../js/jquery3.js"></script>
     <script src="../../js/sweetalert.js"></script>
+    <script src="../../js/jquery.inputmask.js"></script>
     <script>
+
       $(document).ready(function() {
+
+        $('#cpf').inputmask('999.999.999-99');
+        $('#telefone').inputmask('(99) 99999-9999');
+
+
         $('#btnadicionar').click(function(){
           let nome = $('#nome').val()
           let nascimento = $('#nascimento').val()
