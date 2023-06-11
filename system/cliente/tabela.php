@@ -209,6 +209,8 @@
 
     <!-- CODIGO JQUERY USADO PELO ISAC-->
     <script src="../../js/jquery3.js"></script>
+    <!-- Codigo do SweetAlert-->
+    <script src="../../js/sweetalert.js"></script>
     <script>
       $(document).ready(function(){
 
@@ -220,7 +222,7 @@
               $('#corpo_tabela').html(resposta);
             }
             else {
-              alert('Nao tem nada para mostrar!')
+              swal('Nao tem nada para mostrar!', {icon: error})
             }
           })
         })
@@ -240,6 +242,42 @@
               })
             })
             $('#Alterar').modal('show')
+            $('#gravaAlteracao').click(function() {
+              let id = $('#cliente_id').val()
+              let nome = $('#cliente_nome').val()
+              let nascimento = $('#cliente_nascimento').val()
+              let telefone = $('#cliente_telefone').val()
+              let endereco = $('#cliente_endereco').val()
+
+              $.post('update.php', {cliente_id:id, cliente_nome:nome, cliente_nascimento:nascimento, cliente_telefone:telefone, cliente_endereco:endereco}, function(resposta){
+                if(resposta == '1') {
+                  swal('Alteração feita com sucesso!')
+                } else {
+                  swal('Algo deu errado.')
+                }
+              })
+            })
+          }
+
+          if(letra == 'E') {
+            swal({
+              title: 'Excluir',
+              text: 'Deseja realmente excluir esse registro?',
+              icon: 'info',
+              buttons: ['Não', 'Sim'],
+              dangerMode: true,
+            }).then((willDelete) => {
+              if (willDelete){
+                $.post('excluir.php', {codcli: id}, function(resposta) {
+                  if (resposta == '1') {
+                    swal('Registro excluído com sucesso!', {icon: info})
+                    $('#btnbuscar').click();
+                  } else {
+                    swal('Algo deu errado!')
+                  }
+                })
+              }
+            })
           }
         })
       })

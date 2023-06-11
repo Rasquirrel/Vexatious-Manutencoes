@@ -21,7 +21,7 @@
                   <div class="row">
                      <label class="col-sm-3 form-label">Nome</label>
                      <div class="col-sm-9">
-                        <input class="form-control" type="text" required id="nome" value="'.$row['cliente_nome'].'">
+                        <input class="form-control" type="text" required id="cliente_nome" value="'.$row['cliente_nome'].'">
                      </div>
                   </div>
                   
@@ -29,7 +29,7 @@
                   <div class="row">
                      <label class="col-sm-3 form-label">Data de Nascimento</label>
                      <div class="col-sm-9">
-                     <input class="form-control" type="date" required id="nascimento" value="'.$row['cliente_nascimento'].'">
+                     <input class="form-control" type="date" required id="cliente_nascimento" value="'.$row['cliente_nascimento'].'">
                      </div>
                   </div>
 
@@ -37,7 +37,7 @@
                   <div class="row">
                      <label class="col-sm-3 form-label">Telefone</label>
                      <div class="col-sm-9">
-                     <input class="form-control" type="text" required id="telefone" value="'.$row['cliente_telefone'].'">
+                     <input class="form-control" type="text" required id="cliente_telefone" value="'.$row['cliente_telefone'].'">
                      </div>
                   </div>
 
@@ -45,7 +45,7 @@
                   <div class="row">
                      <label class="col-sm-3 form-label">Endereço</label>
                      <div class="col-sm-9">
-                     <input class="form-control" type="text" required id="endereco" value="'.$row['cliente_endereco'].'">
+                     <input class="form-control" type="text" required id="cliente_endereco" value="'.$row['cliente_endereco'].'">
                      </div>
                   </div>
 
