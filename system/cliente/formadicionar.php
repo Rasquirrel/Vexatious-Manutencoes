@@ -202,6 +202,7 @@
       })
     </script>
     <script src="../../js/jquery3.js"></script>
+    <script src="../../js/sweetalert.js"></script>
     <script>
       $(document).ready(function() {
         $('#btnadicionar').click(function(){
@@ -211,6 +212,11 @@
           let endereco = $('#endereco').val()
 
           $.post('salvar.php', {cliente_nome: nome, cliente_nascimento: nascimento, cliente_telefone: telefone, cliente_endereco: endereco}, function(resposta) {
+            if (resposta == '1') {
+              swal('Cadastro feito com sucesso!')
+            } else {
+              swal('Algo deu errado!')
+            }
 
           })
         })
