@@ -63,13 +63,11 @@
               <li class="sidebar-item active"><a class="sidebar-link" href="#"> 
                       <span><i class="fa-solid fa-person fa-xl"></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Clientes</span></a></li>
 
-              <li class="sidebar-item"><a class="sidebar-link" href="charts.html"> 
+              <li class="sidebar-item"><a class="sidebar-link" href="../computador/tabela.php"> 
                       <span><i class="fa-solid fa-computer"></i>&nbsp;&nbsp;&nbsp;&nbsp;Computadores </span></a></li>
               <li class="sidebar-item"><a class="sidebar-link" href="forms.html"> 
                       <span><i class="fa-solid fa-comment"></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Pedidos </span></a></li>
-            
-              <li class="sidebar-item"><a class="sidebar-link" href="login.html"> 
-                      <span><i class="fa-solid fa-door-open"></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Sair </span></a></li>
+           
         </ul>
       </nav>
       <div class="page-content">

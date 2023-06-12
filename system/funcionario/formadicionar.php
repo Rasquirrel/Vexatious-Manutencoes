@@ -68,8 +68,6 @@
               <li class="sidebar-item"><a class="sidebar-link" href="forms.html"> 
                       <span><i class="fa-solid fa-comment"></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Pedidos </span></a></li>
             
-              <li class="sidebar-item"><a class="sidebar-link" href="login.html"> 
-                      <span><i class="fa-solid fa-door-open"></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Sair </span></a></li>
         </ul>
       </nav>
       <div class="page-content">
@@ -117,7 +115,7 @@
                           <div class="my-4"></div>
                           <div class="row">
                             <div class="col-sm-9 ms-auto">
-                              <button class="btn btn-secondary" type="reset">Cancelar</button>
+                              <button class="btn btn-secondary" type="reset">Limpar Campos</button>
                               <button class="btn btn-primary" type="submit" id="btnadicionar">Adicionar</button>
                             </div>
                           </div>

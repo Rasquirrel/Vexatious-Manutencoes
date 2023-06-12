@@ -68,8 +68,6 @@
               <li class="sidebar-item"><a class="sidebar-link" href="forms.html"> 
                       <span><i class="fa-solid fa-comment"></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Pedidos </span></a></li>
             
-              <li class="sidebar-item"><a class="sidebar-link" href="login.html"> 
-                      <span><i class="fa-solid fa-door-open"></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Sair </span></a></li>
         </ul>
       </nav>
       <div class="page-content">
@@ -245,10 +243,15 @@
             })
             $('#Alterar').modal('show')
 
+            $('#cliente_nome_select').change(function() {
+              let cli_id = $('#cliente_id').val()
+              $('#cliente_id').val()
+            })
+
             $('#gravaAlteracao').click(function() {
               let id = $('#computador_id').val()
               let cli_id = $('#cliente_id').val()
-              let comput_nome = $('#computador_nome')
+              let comput_nome = $('#computador_nome').val()
               let problema = $('#computador_problema').val()
 
               $.post('update.php', {computador_id:id, cliente_id:cli_id, computador_problema: problema, computador_nome: comput_nome}, function(resposta){

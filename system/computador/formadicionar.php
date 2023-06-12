@@ -58,18 +58,16 @@
         <ul class="list-unstyled">
               <li class="sidebar-item"><a class="sidebar-link" href="../../index.html"> 
                       <span><i class="fa-solid fa-house"></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Início </span></a></li>
-              <li class="sidebar-item active"><a class="sidebar-link" href="../funcionario/tabela.php"> 
+              <li class="sidebar-item"><a class="sidebar-link" href="../funcionario/tabela.php"> 
                       <span><i class="fa-solid fa-briefcase"></i>&nbsp;&nbsp;&nbsp;&nbsp;Funcionários </span></a></li>
               <li class="sidebar-item"><a class="sidebar-link" href="../cliente/tabela.php"> 
                       <span><i class="fa-solid fa-person fa-xl"></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Clientes</span></a></li>
 
-              <li class="sidebar-item"><a class="sidebar-link" href="tabela.php"> 
+              <li class="sidebar-item active"><a class="sidebar-link" href="tabela.php"> 
                       <span><i class="fa-solid fa-computer"></i>&nbsp;&nbsp;&nbsp;&nbsp;Computadores </span></a></li>
               <li class="sidebar-item"><a class="sidebar-link" href="forms.html"> 
                       <span><i class="fa-solid fa-comment"></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Pedidos </span></a></li>
-            
-              <li class="sidebar-item"><a class="sidebar-link" href="login.html"> 
-                      <span><i class="fa-solid fa-door-open"></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Sair </span></a></li>
+           
         </ul>
       </nav>
       <div class="page-content">
@@ -134,7 +132,7 @@
                           <div class="my-4"></div>
                           <div class="row">
                             <div class="col-sm-9 ms-auto">
-                              <button class="btn btn-secondary" type="reset">Cancelar</button>
+                              <button class="btn btn-secondary" type="reset">Limpar Campos</button>
                               <button class="btn btn-primary" type="submit" id="btnadicionar">Adicionar</button>
                             </div>
                           </div>

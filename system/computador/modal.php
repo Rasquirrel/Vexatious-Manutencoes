@@ -4,13 +4,10 @@
 
    $sql = "select tb_computadores.*, tb_clientes.cliente_nome as cliente_nome, tb_clientes.cliente_id as cliente_id from tb_computadores inner join(tb_clientes) on(tb_computadores.computador_cliente_id = tb_clientes.cliente_id) where computador_id = '$computador_id'"; 
 
-   $sql3 = "SELECT * FROM tb_clientes";
+   $sql2 = "select * from tb_clientes";
 
+   $consulta_tbclientes = $conexao->query($sql2);
 
-   $consulta3 = $conexao->query($sql3);
-
-
-	 
    $consulta = $conexao->query($sql);//executa a consulta
 	
 	if ($consulta->num_rows > 0) {
@@ -37,7 +34,20 @@
                   <div class="row">
                      <label class="col-sm-3 form-label">Cliente ID</label>
                      <div class="col-sm-9">
-                     <input class="form-control" type="text" readonly required id="cliente_id" value="'.$row['cliente_id'].'" style="background-color: #2D3035; color: #8A8D93;">
+                     <select class="form-select" id="cliente_id" style="background-color: #2D3035; color: #8A8D93;">;';
+
+                     if($consulta_tbclientes->num_rows > 0){
+                        while($row2=$consulta_tbclientes->fetch_array(MYSQLI_ASSOC)){
+                           echo '
+                               <option value="'.$row2['cliente_id'].'">'.$row2['cliente_id'].'</option>
+                              ';
+                        }
+                     } else {
+                        echo '<option value="">/NADA</option>';
+                     }
+                     
+                     echo '
+                     </select>
                      </div>
                   </div>
 
@@ -46,10 +56,23 @@
                   <div class="row">
                      <label class="col-sm-3 form-label">Cliente</label>
                      <div class="col-sm-9">
-                     <select class="form-select" id="cliente_nome">
-                        <option value="'.$row['cliente_id'].'">'.$row['cliente_nome'].'</option>
-                     </select>
-                     </div>
+                     <select class="form-select" id="cliente_nome_select">
+                        <option value="'.$row['cliente_nome'].'">'.$row['cliente_nome'].'</option>
+                     ';
+
+                     if($consulta_tbclientes->num_rows > 0){
+                        while($row2=$consulta_tbclientes->fetch_array(MYSQLI_ASSOC)){
+                           echo '
+                               <option value="'.$row2['cliente_nome'].'">'.$row2['cliente_nome'].'</option>
+                              ';
+                        }
+                     } else {
+                        echo '<option value="">/NADA</option>';
+                     }
+   
+                    echo '
+                    </select>
+                    </div>
                   </div>
 
                   <div class="my-4"></div>
